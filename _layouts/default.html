@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | The Codedhans</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  </head>
-  <body>
-    <header><h1>{{ site.title }}</h1></header>
-    {{ content }}
-    <button id="theme-toggle">🌙 Mode</button>
+</head>
+<body>
 
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  const body = document.body;
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Home</a>
+        <a href="/tutorials">Tutorials</a>
+        <a href="/about">About</a>
+    </div>
 
-  // Check for saved preference
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-    toggleBtn.textContent = '☀️ Light';
-  }
+    <header class="hero-banner">
+        <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+        <div class="hero-text">
+            <h1>The Codedhans</h1>
+            <p>"Art of Software"</p>
+        </div>
+    </header>
 
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-      toggleBtn.textContent = '☀️ Light';
-    } else {
-      localStorage.setItem('theme', 'light');
-      toggleBtn.textContent = '🌙 Dark';
-    }
-  });
-</script>
-  </body>
-</html>
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/about">About</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms</a>
+        </div>
+        <a href="https://www.buymeacoffee.com/yourusername" class="bmc-btn">☕ Buy me a coffee</a>
+        <p>&copy; 2026 The Codedhans</p>
+    </footer>
+
+    <script>
+        function openNav() { document.getElementById("mySidebar").style.width = "250px"; }
+        function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
+    </script>
+</body>
+  </html>
