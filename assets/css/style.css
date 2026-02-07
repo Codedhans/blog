@@ -9,8 +9,8 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: var(--grey);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 /* Hero Banner */
